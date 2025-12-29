@@ -137,14 +137,14 @@ export default function NuevoProductoPage() {
     try {
       const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3000'
       
-      if (!session.accessToken) {
+      if (!session?.accessToken) {
         setError('No hay token de autenticación. Volvé a iniciar sesión.')
         setLoading(false)
         return
       }
 
       console.log('🔑 Session accessToken:', session.accessToken)
-      console.log('👤 User role:', session.user.role)
+      console.log('👤 User role:', session.user?.role)
       console.log('📍 Upload URL:', `${backendUrl}/upload/images`)
       
       // 1. Primero subir las imágenes
