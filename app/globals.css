@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
+/* Paleta de colores personalizada - Green Pea Theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-green-pea: #276b31;       /* Verde principal */
+  --color-harp: #eaf4ec;            /* Fondo claro */
+  --color-mantis: #75bd67;          /* Verde claro */
+  --color-acapulco: #88b49d;        /* Verde grisáceo */
+  
+  --background: var(--color-harp);
+  --foreground: var(--color-green-pea);
 }
 
 @theme inline {
@@ -12,15 +18,51 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Banner de promociones animado */
+.promo-banner {
+  width: 100%;
+  background: linear-gradient(90deg, #276b31 0%, #75bd67 100%);
+  overflow: hidden;
+  position: sticky;
+  top: 72px; /* Altura aproximada del navbar */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.promo-content {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: scroll-left 30s linear infinite;
+  gap: 2rem;
+}
+
+.promo-text {
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0 1rem;
+}
+
+.promo-separator {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.2rem;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

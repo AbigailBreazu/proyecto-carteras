@@ -1,0 +1,301 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.header {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 3px solid #FADEDD;
+}
+
+.headerContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #547552;
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #666;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.createBtn {
+  background: linear-gradient(135deg, #547552 0%, #9CC3A6 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(84, 117, 82, 0.3);
+  white-space: nowrap;
+}
+
+.createBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(84, 117, 82, 0.4);
+}
+
+.empty {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.emptyIcon {
+  font-size: 5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.5;
+}
+
+.empty h2 {
+  color: #547552;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.empty p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.emptyBtn {
+  background: #547552;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.emptyBtn:hover {
+  background: #3f5a3d;
+  transform: translateY(-2px);
+}
+
+.comprasList {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.compraCard {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.compraCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #FADEDD;
+}
+
+.compraHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f5f5f5;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.compraInfo {
+  flex: 1;
+}
+
+.compraId {
+  font-size: 1.3rem;
+  color: #547552;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.compraFecha {
+  color: #999;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.estadoBadge {
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.itemsList {
+  margin-bottom: 1.5rem;
+}
+
+.itemsTitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.itemInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+
+.itemNombre {
+  color: #333;
+  font-weight: 500;
+}
+
+.itemCantidad {
+  color: #666;
+  font-size: 0.9rem;
+  background: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+}
+
+.itemPrecio {
+  color: #547552;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.compraFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 2px solid #f5f5f5;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.total {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.totalLabel {
+  color: #666;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.totalMonto {
+  color: #547552;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.paymentInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.paymentLabel {
+  color: #999;
+  font-size: 0.85rem;
+}
+
+.paymentId {
+  color: #666;
+  font-size: 0.9rem;
+  font-family: monospace;
+  background: #f5f5f5;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .createBtn {
+    width: 100%;
+  }
+
+  .compraCard {
+    padding: 1.5rem;
+  }
+
+  .compraHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .estadoBadge {
+    width: 100%;
+    text-align: center;
+  }
+
+  .compraFooter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .paymentInfo {
+    align-items: flex-start;
+  }
+
+  .totalMonto {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,514 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error h2 {
+  color: #D78492;
+  margin-bottom: 1.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.backBtn {
+  background: white;
+  border: 2px solid #9CC3A6;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  color: #547552;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.backBtn:hover {
+  background: #9CC3A6;
+  color: white;
+}
+
+.headerInfo {
+  flex: 1;
+}
+
+.title {
+  font-size: 1.75rem;
+  color: #547552;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.verPedidoBtn {
+  background: #547552;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.verPedidoBtn:hover {
+  background: #3f5a3d;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoPanel {
+  background: linear-gradient(135deg, #9CC3A6 0%, #547552 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: white;
+}
+
+.infoPanel h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.infoPanelContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.infoItem strong {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.infoItem span {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.estadoBadge {
+  background: white;
+  color: #547552;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.mensajesContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-height: 500px;
+  max-height: 600px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sinMensajes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+  color: #999;
+  text-align: center;
+}
+
+.sinMensajes p:first-child {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hint {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+.mensajesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mensaje {
+  max-width: 75%;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mensajeAdmin {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #547552 0%, #3f5a3d 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.mensajeCliente {
+  align-self: flex-start;
+  background: #FADEDD;
+  color: #333;
+  border-bottom-left-radius: 4px;
+}
+
+.mensajeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.mensajeAutor {
+  font-weight: 600;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.mensajeFecha {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.mensajeTexto {
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.estadoEnviado {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.estadoLeido {
+  font-size: 0.75rem;
+  text-align: right;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.cambioEstadoBadge {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  display: inline-block;
+  backdrop-filter: blur(10px);
+}
+
+.formulario {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #FADEDD;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s;
+  min-height: 80px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #547552;
+}
+
+.textarea:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.botonesContainer {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.btnIcono {
+  background: #f5f5f5;
+  border: 2px solid #FADEDD;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btnIcono:hover:not(:disabled) {
+  background: #FADEDD;
+  border-color: #D78492;
+  transform: translateY(-2px);
+}
+
+.btnIcono:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnEnviar {
+  background: #547552;
+  color: white;
+  border: none;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(84, 117, 82, 0.2);
+  font-family: inherit;
+}
+
+.btnEnviar:hover:not(:disabled) {
+  background: #3f5a3d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(84, 117, 82, 0.3);
+}
+
+.btnEnviar:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Preview de imagen */
+.previewImagen {
+  position: relative;
+  max-width: 300px;
+  border: 2px solid #FADEDD;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.previewImagen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.btnEliminarImagen {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #D78492;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.btnEliminarImagen:hover {
+  background: #c2677a;
+  transform: scale(1.1);
+}
+
+/* Modal cámara */
+.modalCamara {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 90%;
+  max-height: 90vh;
+}
+
+.video {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 8px;
+}
+
+.botonesCamera {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btnCapturar, .btnCerrar {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btnCapturar {
+  background: #547552;
+  color: white;
+}
+
+.btnCapturar:hover {
+  background: #3f5a3d;
+  transform: translateY(-2px);
+}
+
+.btnCerrar {
+  background: #D78492;
+  color: white;
+}
+
+.btnCerrar:hover {
+  background: #c2677a;
+  transform: translateY(-2px);
+}
+
+/* Imagen en mensaje */
+.mensajeImagen {
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mensajeImagen img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  z-index: 3000;
+  animation: slideIn 0.3s ease-out;
+  max-width: 400px;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.toast.success {
+  background: #547552;
+}
+
+.toast.error {
+  background: #D78492;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .verPedidoBtn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mensaje {
+    max-width: 90%;
+  }
+
+  .mensajesContainer {
+    max-height: 400px;
+  }
+
+  .infoPanelContent {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,241 @@
+/* Estilos para la página de bienvenida */
+
+/* Contenedor principal - ocupa toda la altura de la ventana */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Resta la altura del navbar */
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #9CC3A6 0%, #FADEDD 100%);
+  background-attachment: fixed;
+}
+
+/* Título principal */
+.title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #FADEDD;
+  margin-bottom: 1.5rem;
+  margin-top: 4rem;
+  animation: fadeInDown 1s ease;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.9), 
+               1px 1px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Banner de envíos */
+.shippingBanner {
+  background: rgba(215, 132, 146, 0.95);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  animation: fadeIn 1.2s ease;
+  border: 2px solid #9CC3A6;
+  backdrop-filter: blur(10px);
+}
+
+.shippingText {
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 600;
+  margin: 0;
+}
+
+.shippingLink {
+  color: white;
+  text-decoration: underline;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.shippingLink:hover {
+  color: #9CC3A6;
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: 1.5rem;
+  color: #FADEDD;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  animation: fadeInUp 1s ease;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9), 
+               1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Botón de llamada a la acción */
+.button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: #D78492;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 1.2s ease;
+  border: 2px solid #9CC3A6;
+}
+
+.button:hover {
+  background: #9CC3A6;
+  color: #D78492;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Sección de categorías */
+.categoriesSection {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 4rem;
+  padding: 0 2rem;
+}
+
+.categoriesTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #547552;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.categoryCard {
+  position: relative;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: url('/hero-bg-tropical.webp');
+  background-size: 200px;
+  background-repeat: repeat;
+  background-position: center;
+  box-shadow: 0 4px 12px rgba(84, 117, 82, 0.3);
+  text-decoration: none;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(84, 117, 82, 0.4);
+}
+
+.categoryOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.categoryCard:hover .categoryOverlay {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.categoryName {
+  color: #FADEDD;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9),
+               2px 2px 4px rgba(0, 0, 0, 0.8),
+               1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  .shippingBanner {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .shippingText {
+    font-size: 1rem;
+  }
+
+  .categoriesSection {
+    margin-top: 3rem;
+    padding: 0 1rem;
+  }
+
+  .categoriesTitle {
+    font-size: 1.5rem;
+  }
+
+  .categoriesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .categoryCard {
+    height: 150px;
+  }
+
+  .categoryName {
+    font-size: 1.5rem;
+  }
+}

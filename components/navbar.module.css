@@ -1,0 +1,703 @@
+/* Estilos para la barra de navegación */
+
+/* Contenedor principal del navbar - fijo en la parte superior */
+.navbar {
+  background: #D78492;
+  box-shadow: 0 2px 8px rgba(84, 117, 82, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 2px solid #9CC3A6;
+}
+
+/* Contenedor interno para limitar el ancho máximo */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  gap: 2rem;
+}
+
+/* Estilos del logo/nombre de la tienda - centrado */
+.centerSection {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo:hover {
+  color: #FADEDD;
+}
+
+/* Menú de navegación - flexbox horizontal en desktop a la izquierda */
+.menu {
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  align-items: flex-start;
+  order: -1; /* Coloca el menú primero en el flexbox */
+  flex: 1;
+}
+
+/* Estilos de los enlaces del menú */
+.menu a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: block;
+}
+
+.menu a:hover {
+  color: #333;
+  background: #FADEDD;
+}
+
+/* Enlace especial para Admin */
+.adminLink {
+  background: #547552 !important;
+  color: #FADEDD !important;
+  font-weight: 600 !important;
+}
+
+.adminLink:hover {
+  background: #88b49d !important;
+  color: #FADEDD !important;
+}
+
+/* Contenedor del menú admin con dos filas */
+.adminMenuContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.adminMenuRow {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.adminMenuRow a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  display: block;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  flex: 1;
+  text-align: center;
+  min-width: fit-content;
+}
+
+.adminMenuRow a:hover {
+  color: #333;
+  background: #FADEDD;
+}
+
+.adminLink:hover {
+  background: #88b49d !important;
+  color: #FADEDD !important;
+}
+
+/* Estilos para enlaces con notificaciones */
+.notificationLink {
+  position: relative;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Badge de notificaciones */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: #dc3545;
+  color: white;
+  border-radius: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(220, 53, 69, 0);
+  }
+}
+
+/* Badge de admin en el menú desplegable */
+.adminBadge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  color: #333;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-top: 0.3rem;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown de categorías */
+.dropdown {
+  position: relative;
+}
+
+.categoriasDropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.categoriasMobile {
+  display: none;
+}
+
+.categoriasButton {
+  background: none;
+  border: none;
+  color: rgb(60, 54, 51);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+.categoriasButton:hover {
+  color: rgb(116, 114, 100);
+  background: rgb(224, 204, 190);
+}
+
+/* Submenú de categorías */
+.categoriasSubmenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #FADEDD;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(60, 54, 51, 0.15);
+  border-radius: 8px;
+  border: 1px solid #D78492;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.categoriasSubmenu.categoriasSubmenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.categoriaItem {
+  padding: 0.75rem 1.25rem;
+  display: block;
+  color: rgb(60, 54, 51);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+}
+
+.categoriaItem:hover {
+  background: #D78492;
+  color: white;
+  padding-left: 1.5rem;
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  color: rgb(60, 54, 51);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+.dropdownButton:hover {
+  color: rgb(116, 114, 100);
+  background: transparent;
+}
+
+/* Submenú de categorías */
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #FADEDD;
+  margin: 0;
+  padding: 0.5rem 0;
+  min-width: 200px;
+  box-shadow: 0 4px 12px rgba(60, 54, 51, 0.15);
+  border-radius: 8px;
+  border: 1px solid #D78492;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.submenu.submenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.submenu a {
+  padding: 0.75rem 1.25rem;
+  display: block;
+  color: rgb(60, 54, 51);
+  text-decoration: none;
+  transition: all 0.3s;
+  border-radius: 0;
+}
+
+.submenu a:hover {
+  background: #D78492;
+  color: white;
+  padding-left: 1.5rem;
+}
+
+/* Sección de usuario y autenticación */
+.userIconWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+/* Estilos del ícono del carrito */
+.cartIcon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(60, 54, 51);
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.cartIcon:hover {
+  background: rgb(224, 204, 190);
+}
+
+.cartBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #8B4513;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.userDropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgb(60, 54, 51);
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.userInfo:hover {
+  background: rgb(224, 204, 190);
+}
+
+.userNameSmall {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgb(60, 54, 51);
+}
+
+/* Menú desplegable de usuario */
+.userSubmenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #FADEDD;
+  margin-top: 0.5rem;
+  padding: 0.75rem 0;
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(60, 54, 51, 0.15);
+  border-radius: 8px;
+  border: 1px solid #D78492;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.userSubmenu.userSubmenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.submenuHeader {
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.submenuHeader strong {
+  color: rgb(60, 54, 51);
+  font-size: 0.95rem;
+}
+
+.userEmail {
+  color: rgb(116, 114, 100);
+  font-size: 0.85rem;
+}
+
+.submenuDivider {
+  height: 1px;
+  background: rgb(224, 204, 190);
+  margin: 0.5rem 0;
+}
+
+.submenuItem {
+  padding: 0.75rem 1.25rem;
+  display: block;
+  color: rgb(60, 54, 51);
+  text-decoration: none;
+  transition: all 0.3s;
+  border: none;
+  background: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.submenuItem:hover {
+  background: #D78492;
+  color: white;
+  padding-left: 1.5rem;
+}
+
+.userLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.userLink {
+  color: rgb(60, 54, 51);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.userLink:hover {
+  color: rgb(116, 114, 100);
+  text-decoration: underline;
+}
+
+.userLinks span {
+  color: rgb(116, 114, 100);
+}
+
+.userMenuHidden {
+  display: flex;
+  align-items: center;
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(60, 54, 51);
+  cursor: pointer;
+}
+
+.authSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.userName {
+  color: rgb(60, 54, 51);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.logoutButton {
+  background: rgb(60, 54, 51);
+  color: rgb(238, 237, 235);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.logoutButton:hover {
+  background: rgb(116, 114, 100);
+}
+
+.authButtons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.loginLink {
+  color: rgb(60, 54, 51);
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s;
+  border: 2px solid rgb(224, 204, 190);
+}
+
+.loginLink:hover {
+  background: rgb(116, 114, 100);
+  color: white;
+  border-color: rgb(116, 114, 100);
+}
+
+.registerLink {
+  background: rgb(224, 204, 190);
+  color: rgb(60, 54, 51);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 2px solid rgb(224, 204, 190);
+}
+
+.registerLink:hover {
+  background: rgb(116, 114, 100);
+  color: white;
+  border-color: rgb(116, 114, 100);
+}
+
+/* Botón hamburguesa - oculto en desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Las tres líneas del ícono hamburguesa */
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: rgb(60, 54, 51);
+  transition: all 0.3s;
+  border-radius: 2px;
+}
+
+/* Animación cuando el menú está abierto */
+.hamburger span.active:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger span.active:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger span.active:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* RESPONSIVE - Tablets y móviles */
+@media (max-width: 768px) {
+  /* Mostrar botón hamburguesa en móvil a la izquierda */
+  .hamburger {
+    display: flex;
+    order: 0;
+  }
+
+  /* Logo centrado en móvil */
+  .centerSection {
+    position: static;
+    transform: none;
+    order: 1;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  /* Mostrar el ícono de usuario en móvil a la derecha */
+  .userIconWrapper {
+    display: flex;
+    order: 2;
+  }
+
+  .userMenuHidden {
+    display: none;
+  }
+
+  /* Ocultar dropdown de categorías en móvil, mostrar enlaces individuales */
+  .categoriasDropdown {
+    display: none;
+  }
+
+  .categoriasMobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .categoriasMobile a {
+    display: block;
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+
+  /* Menú se convierte en vertical y se oculta por defecto */
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgb(238, 237, 235);
+    box-shadow: 0 4px 8px rgba(60, 54, 51, 0.1);
+    padding: 1rem 0;
+    gap: 0;
+    /* Oculto por defecto */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    order: 3;
+  }
+
+  /* Cuando el menú está abierto */
+  .menu.menuOpen {
+    max-height: 800px;
+  }
+
+  .menu a {
+    display: block;
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+
+  .container {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* Tablets medianas */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .container {
+    padding: 1rem 1.5rem;
+  }
+
+  .menu {
+    gap: 1rem;
+  }
+
+  .menu a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .categoriasButton {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1.35rem;
+  }
+}

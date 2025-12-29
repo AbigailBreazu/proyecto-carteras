@@ -1,65 +1,143 @@
-import Image from "next/image";
+// Página principal - muestra la bienvenida y enlace al catálogo
+import Link from 'next/link'
+import styles from './page.module.css'
+import CarruselHome from '@/components/CarruselHome'
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    // Contenedor principal tipo "hero" - sección de bienvenida
+    <main className={styles.hero}>
+      
+      {/* Carrusel de imágenes */}
+      <CarruselHome />
+      
+      {/* Título principal de bienvenida */}
+      <h1 className={styles.title}>
+        Datsusara
+      </h1>
+
+      {/* Banner de envíos - información destacada sobre envíos */}
+      <div className={styles.shippingBanner}>
+        <p className={styles.shippingText}>
+          📦 Hacemos envíos a todo el país
+        </p>
+        <Link href="/calcular-envio" className={styles.shippingLink}>
+          Calcular costo de envío
+        </Link>
+      </div>
+
+      {/* Subtítulo descriptivo */}
+      <p className={styles.subtitle}>
+        Piezas únicas hechas a mano con amor y dedicación. 
+        Cada producto cuenta una historia de trabajo artesanal 
+        y pasión por los detalles.
+      </p>
+
+      {/* Botón que lleva a la página de productos */}
+      <Link href="/productos" className={styles.button}>
+        Ver Todos los Productos
+      </Link>
+
+      {/* Sección de categorías */}
+      <div className={styles.categoriesSection}>
+        <h2 className={styles.categoriesTitle}>Explorar por Categoría</h2>
+        
+        <div className={styles.categoriesGrid}>
+          
+          {/* Tarjeta de Carteras */}
+          <Link href="/productos?categoria=carteras" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Carteras</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Riñoneras */}
+          <Link href="/productos?categoria=rinoneras" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Riñoneras</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Materas */}
+          <Link href="/productos?categoria=materas" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Materas</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Combos */}
+          <Link href="/productos?categoria=combos" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Combos</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Mochilas */}
+          <Link href="/productos?categoria=mochilas" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Mochilas</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Neceser Pileta */}
+          <Link href="/productos?categoria=neceser_pileta" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Neceser Pileta</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Neceser Higiene */}
+          <Link href="/productos?categoria=neceser_higiene" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Neceser Higiene</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Mantel Camping */}
+          <Link href="/productos?categoria=mantel_camping" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Mantel Camping</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Bolso Camping */}
+          <Link href="/productos?categoria=bolso_camping" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Bolso Camping</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Lonchera Térmica */}
+          <Link href="/productos?categoria=lonchera_termica" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Lonchera Térmica</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Mochilas Pequeñas */}
+          <Link href="/productos?categoria=mochilas_pequenas" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Mochilas Pequeñas</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Kit Dormir */}
+          <Link href="/productos?categoria=kit_dormir" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Kit Dormir</h3>
+            </div>
+          </Link>
+
+          {/* Tarjeta de Otros */}
+          <Link href="/productos?categoria=otros" className={styles.categoryCard}>
+            <div className={styles.categoryOverlay}>
+              <h3 className={styles.categoryName}>Otros</h3>
+            </div>
+          </Link>
+
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+      </div>
+
+    </main>
+  )
 }

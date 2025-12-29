@@ -1,0 +1,151 @@
+/* Estilos para la página de registro */
+
+.container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: rgb(238, 237, 235);
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(60, 54, 51, 0.15);
+  border: 1px solid rgb(224, 204, 190);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(60, 54, 51);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: rgb(116, 114, 100);
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  font-weight: 600;
+  color: rgb(60, 54, 51);
+  font-size: 0.95rem;
+}
+
+.input {
+  padding: 0.875rem 1rem;
+  border: 2px solid rgb(224, 204, 190);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background: white;
+  color: rgb(60, 54, 51);
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgb(116, 114, 100);
+  box-shadow: 0 0 0 3px rgba(116, 114, 100, 0.1);
+}
+
+.inputError {
+  border-color: #D78492 !important;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 3px rgba(215, 132, 146, 0.1) !important;
+}
+
+.fieldError {
+  color: #D78492;
+  font-size: 0.85rem;
+  margin-top: -0.25rem;
+  font-weight: 500;
+}
+
+.button {
+  padding: 1rem 2rem;
+  background: rgb(60, 54, 51);
+  color: rgb(238, 237, 235);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(60, 54, 51, 0.3);
+  margin-top: 1rem;
+}
+
+.button:hover:not(:disabled) {
+  background: rgb(116, 114, 100);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(60, 54, 51, 0.4);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error {
+  background: #FADEDD;
+  border: 1px solid #D78492;
+  color: #D78492;
+  padding: 0.875rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: rgb(116, 114, 100);
+}
+
+.link {
+  color: rgb(60, 54, 51);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: rgb(116, 114, 100);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+}

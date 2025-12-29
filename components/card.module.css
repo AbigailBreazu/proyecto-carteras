@@ -1,0 +1,187 @@
+.container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  background: #FADEDD;
+  min-height: calc(100vh - 80px);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  color: #547552;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(84, 117, 82, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #9CC3A6;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(84, 117, 82, 0.3);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.carouselWrapper {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #547552;
+}
+
+.description {
+  font-size: 0.9rem;
+  color: #88b49d;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #547552;
+}
+
+.addButton {
+  width: 100%;
+  padding: 0.75rem;
+  background: #547552;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.addButton:hover {
+  background: #9CC3A6;
+  transform: translateY(-2px);
+}
+
+.addButton.added {
+  background: #88b49d;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Mensaje cuando no hay productos */
+.noProducts {
+  text-align: center;
+  color: #88b49d;
+  font-size: 1.2rem;
+  padding: 3rem;
+}
+
+/* Paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  padding: 1.5rem 0;
+}
+
+.paginationButton {
+  padding: 0.5rem 1rem;
+  background: white;
+  color: #547552;
+  border: 2px solid #9CC3A6;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  min-width: 40px;
+}
+
+.paginationButton:hover {
+  background: #9CC3A6;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.paginationActive {
+  background: #547552;
+  color: white;
+  border-color: #547552;
+}
+
+.paginationDots {
+  padding: 0.5rem;
+  color: #88b49d;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

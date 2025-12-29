@@ -1,0 +1,545 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error {
+  text-align: center;
+  padding: 4rem;
+}
+
+.error h2 {
+  color: #D78492;
+  margin-bottom: 1.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.backBtn {
+  background: #f5f5f5;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.backBtn:hover {
+  background: #e0e0e0;
+}
+
+.headerActions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.actionBtn {
+  background: #547552;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actionBtn:hover {
+  background: #3f5a3d;
+  transform: translateY(-2px);
+}
+
+.editBtn {
+  background: #9CC3A6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.editBtn:hover {
+  background: #7da989;
+  transform: translateY(-2px);
+}
+
+.editBtn {
+  background: #9CC3A6;
+}
+
+.editBtn:hover {
+  background: #7db28e;
+}
+
+.title {
+  flex: 1;
+  color: #547552;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.estadoBadge {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Timeline */
+.timeline {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.timelineItem {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.timelineItem:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 28px;
+  bottom: 0;
+  width: 2px;
+  background: #e0e0e0;
+}
+
+/* Estado completado (ya pasó) - ROSA */
+.timelineItem.completed:not(:last-child)::before {
+  background: #D78492;
+}
+
+.timelineItem.completed .timelineIcon {
+  background: #D78492;
+  box-shadow: 0 0 0 4px rgba(215, 132, 146, 0.2);
+}
+
+/* Estado actual (donde está ahora) - VERDE */
+.timelineItem.current:not(:last-child)::before {
+  background: #547552;
+}
+
+.timelineItem.current .timelineIcon {
+  background: #547552;
+  box-shadow: 0 0 0 4px rgba(84, 117, 82, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 4px rgba(84, 117, 82, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(84, 117, 82, 0.1);
+  }
+}
+
+.timelineItem.current .timelineContent h4 {
+  color: #547552;
+  font-weight: 700;
+}
+
+.timelineItem.current .timelineContent > p:first-of-type {
+  color: #547552;
+  font-weight: 600;
+}
+
+/* Estado pendiente (futuro) - GRIS */
+.timelineItem.pending .timelineIcon {
+  background: #e0e0e0;
+  color: #999;
+}
+
+.timelineItem.pending .timelineContent h4 {
+  color: #999;
+}
+
+.timelineItem.pending .timelineContent > p:first-of-type {
+  color: #ccc;
+}
+
+.timelineIcon {
+  position: relative;
+  min-width: 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* Ya no necesitamos este estilo, lo manejamos arriba */
+/* .timelineItem.completed .timelineIcon {
+  background: #547552;
+} */
+
+.timelineContent {
+  flex: 1;
+}
+
+.timelineContent h4 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.timelineContent p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.descripcion {
+  margin-top: 0.5rem !important;
+  color: #888 !important;
+  font-size: 0.85rem !important;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.tracking {
+  margin-top: 0.5rem !important;
+  color: #547552 !important;
+  font-weight: 600;
+  background: #FADEDD;
+  padding: 0.5rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.canceladoBanner {
+  background: linear-gradient(135deg, #FADEDD 0%, #f5c9d0 100%);
+  border: 2px solid #D78492;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.canceladoBanner h3 {
+  color: #D78492;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.5rem;
+}
+
+.canceladoBanner p {
+  color: #666;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* Detalles */
+.detalles {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.detalles h2 {
+  color: #547552;
+  margin: 0 0 2rem 0;
+  font-size: 1.8rem;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section h3 {
+  color: #547552;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.telasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.telaCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.telaImagen {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #eaf4ec;
+  transition: all 0.2s;
+}
+
+.telaImagen:hover {
+  border-color: #547552;
+  transform: scale(1.05);
+}
+
+.telaNombre {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  line-height: 1.3;
+  word-break: break-word;
+}
+
+.disenoImagen {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  border: 2px solid #FADEDD;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.comentarios {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #547552;
+  color: #333;
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.infoItem strong {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.infoItem span {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Botón de cancelar */
+.cancelBtn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cancelBtn:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* Modal de confirmación */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.confirmModal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+}
+
+.confirmModal h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.confirmModal p {
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.confirmBtn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.confirmBtn:hover {
+  background: #c82333;
+}
+
+.cancelModalBtn {
+  background: #f5f5f5;
+  color: #333;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.cancelModalBtn:hover {
+  background: #e0e0e0;
+}
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  font-weight: 500;
+  animation: slideIn 0.3s ease-out;
+}
+
+.toast.success {
+  background: #28a745;
+  color: white;
+}
+
+.toast.error {
+  background: #dc3545;
+  color: white;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline {
+    padding: 1.5rem;
+  }
+
+  .timelineItem {
+    gap: 1rem;
+  }
+
+  .telasGrid {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  }
+
+  .detalles {
+    padding: 1.5rem;
+  }
+
+  .detalles h2 {
+    font-size: 1.5rem;
+  }
+}

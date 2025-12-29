@@ -1,0 +1,44 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+    "userEmail": "maria@gmail.com",
+    "userName": "maria",
+    "disenoBase": "1766541555570",
+    "disenoPropio": null,
+    "telasSeleccionadas": [
+      "tela-1766541653771.jpg"
+    ],
+    "comentarios": "especificaciones ",
+    "estado": "ESPERANDO_STOCK",
+    "fechaCreacion": "2025-12-24T03:49:58.687Z",
+    "fechaActualizacion": "2025-12-24T15:41:10.088Z"
+  },
+  {
+    "id": "b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e",
+    "userEmail": "maria@gmail.com",
+    "userName": "maria",
+    "disenoBase": null,
+    "disenoPropio": "/uploads/disenos/diseno-1766568167083-mochila1blancoynegro.webp",
+    "telasSeleccionadas": [
+      "tela-1766541653771.jpg"
+    ],
+    "comentarios": "explicaciones ",
+    "estado": "APROBADO",
+    "fechaCreacion": "2025-12-24T09:22:47.089Z",
+    "fechaActualizacion": "2025-12-24T14:42:32.809Z"
+  },
+  {
+    "id": "c3d4e5f6-a7b8-4c9d-0e1f-2a3b4c5d6e7f",
+    "userEmail": "maria@gmail.com",
+    "userName": "maria",
+    "disenoBase": null,
+    "disenoPropio": "/uploads/disenos/diseno-1766568494461-20250908_OHR.OrchardLibrary_ROW7132062115_UHD_bing.jpg",
+    "telasSeleccionadas": [
+      "tela-1766541653771.jpg"
+    ],
+    "comentarios": "especificacione",
+    "estado": "EN_MODIFICACION",
+    "fechaCreacion": "2025-12-24T09:28:14.468Z",
+    "fechaActualizacion": "2025-12-24T15:52:54.378Z"
+  }
+]

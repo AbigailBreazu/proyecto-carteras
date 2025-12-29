@@ -1,0 +1,404 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #547552;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filtro {
+  background: white;
+  border: 2px solid #e0e0e0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  color: #666;
+}
+
+.filtro:hover {
+  border-color: #9CC3A6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(156, 195, 166, 0.2);
+}
+
+.filtroActivo {
+  background: linear-gradient(135deg, #547552, #9CC3A6);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(84, 117, 82, 0.3);
+}
+
+/* Lista */
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+/* Card de solicitud */
+.solicitudCard {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s;
+}
+
+.solicitudCard:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.solicitudHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.solicitudInfo h3 {
+  color: #547552;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.usuario {
+  color: #666;
+  margin: 0.25rem 0;
+  font-weight: 500;
+}
+
+.fecha {
+  color: #999;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+}
+
+.estadoBadge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.estadoBadge.pendiente {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.estadoBadge.aprobada {
+  background: #d1e7dd;
+  color: #0f5132;
+}
+
+.estadoBadge.rechazada {
+  background: #f8d7da;
+  color: #842029;
+}
+
+.solicitudBody {
+  margin-bottom: 1rem;
+}
+
+.motivoLabel {
+  color: #547552;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.motivo {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  color: #333;
+  line-height: 1.6;
+  border-left: 4px solid #9CC3A6;
+}
+
+.respuestaAdmin {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #e8f4f0;
+  border-radius: 8px;
+  border-left: 4px solid #547552;
+}
+
+.respuestaLabel {
+  color: #547552;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.solicitudActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.verPedidoBtn, .responderBtn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.verPedidoBtn {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.verPedidoBtn:hover {
+  background: #e0e0e0;
+}
+
+.responderBtn {
+  background: linear-gradient(135deg, #547552, #9CC3A6);
+  color: white;
+}
+
+.responderBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(84, 117, 82, 0.3);
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal h2 {
+  color: #547552;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.modalInfo {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.modalInfo p {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.modalMotivo {
+  background: white;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+  border-left: 3px solid #9CC3A6;
+  font-style: italic;
+}
+
+.modalForm {
+  margin-bottom: 1.5rem;
+}
+
+.modalForm label {
+  display: block;
+  color: #547552;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  transition: border-color 0.3s;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #9CC3A6;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.cancelBtn, .rechazarBtn, .aprobarBtn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.cancelBtn {
+  background: #f5f5f5;
+  color: #333;
+}
+
+.cancelBtn:hover {
+  background: #e0e0e0;
+}
+
+.rechazarBtn {
+  background: #dc3545;
+  color: white;
+}
+
+.rechazarBtn:hover {
+  background: #c82333;
+}
+
+.aprobarBtn {
+  background: linear-gradient(135deg, #547552, #9CC3A6);
+  color: white;
+}
+
+.aprobarBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(84, 117, 82, 0.3);
+}
+
+.cancelBtn:disabled, .rechazarBtn:disabled, .aprobarBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  font-weight: 500;
+  animation: slideIn 0.3s ease-out;
+}
+
+.toast.success {
+  background: #28a745;
+  color: white;
+}
+
+.toast.error {
+  background: #dc3545;
+  color: white;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .filtros {
+    justify-content: flex-start;
+  }
+
+  .solicitudHeader {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .solicitudActions {
+    flex-direction: column;
+  }
+
+  .modalButtons {
+    flex-direction: column;
+  }
+
+  .modal {
+    padding: 1.5rem;
+  }
+}

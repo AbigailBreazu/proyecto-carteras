@@ -1,0 +1,230 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  color: #547552;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  color: #666;
+  margin: 0;
+}
+
+.badge {
+  background: #D78492;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+.filterBtn {
+  background: white;
+  border: 2px solid #FADEDD;
+  padding: 0.75rem 1.25rem;
+  border-radius: 25px;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.filterBtn:hover {
+  border-color: #9CC3A6;
+  color: #547552;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.filterBtn.active {
+  background: linear-gradient(135deg, #547552 0%, #6b9668 100%);
+  border: 2px solid #547552;
+  color: white;
+  box-shadow: 0 4px 12px rgba(84, 117, 82, 0.3);
+  transform: translateY(-2px);
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+.conversacionesList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.conversacionCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #FADEDD;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.conversacionCard:hover {
+  border-color: #9CC3A6;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.conversacionCard.noLeido {
+  border-color: #D78492;
+  background: linear-gradient(to right, #FADEDD 0%, white 100%);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.clienteInfo {
+  flex: 1;
+}
+
+.clienteNombre {
+  font-size: 1.2rem;
+  color: #547552;
+  margin: 0 0 0.25rem 0;
+}
+
+.clienteEmail {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.badgeNoLeido {
+  background: #D78492;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  min-width: 24px;
+  text-align: center;
+}
+
+.pedidoInfo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.pedidoId {
+  font-weight: 600;
+  color: #333;
+}
+
+.estadoBadge {
+  background: #9CC3A6;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.ultimoMensaje {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid #9CC3A6;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mensajeAutor {
+  font-weight: 600;
+  color: #547552;
+  font-size: 0.9rem;
+}
+
+.mensajeTexto {
+  color: #333;
+  line-height: 1.5;
+}
+
+.mensajeFecha {
+  color: #999;
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .conversacionCard {
+    padding: 1rem;
+  }
+
+  .clienteNombre {
+    font-size: 1rem;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filterBtn {
+    flex: 1;
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1766541555570",
+    "nombre": "mochila",
+    "imagenes": [
+      "/disenos-base/mochila-1-1766541555557.webp"
+    ],
+    "imagenPrincipal": "/disenos-base/mochila-1-1766541555557.webp",
+    "fechaCreacion": "2025-12-24T01:59:15.570Z"
+  },
+  {
+    "id": "1766593668476",
+    "nombre": "mochila urbana ",
+    "imagenes": [
+      "/disenos-base/mochila urbana -1-1766593668439.jpg"
+    ],
+    "imagenPrincipal": "/disenos-base/mochila urbana -1-1766593668439.jpg",
+    "fechaCreacion": "2025-12-24T16:27:48.486Z"
+  }
+]

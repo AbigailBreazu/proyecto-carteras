@@ -1,0 +1,507 @@
+/* Estilos para la página de administración */
+
+.container {
+  min-height: calc(100vh - 80px);
+  padding: 3rem 2rem 2rem 2rem;
+  background: rgb(238, 237, 235);
+  margin-top: 1rem;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(60, 54, 51);
+  margin-bottom: 0.5rem;
+}
+
+.header p {
+  color: rgb(116, 114, 100);
+  font-size: 1.1rem;
+}
+
+.adminBadge {
+  display: inline-block;
+  background: rgb(116, 114, 100);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Sección de Bienvenida */
+.welcomeSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.welcomeTitle {
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(60, 54, 51);
+  margin-bottom: 1rem;
+}
+
+.welcomeText {
+  font-size: 1.3rem;
+  color: rgb(116, 114, 100);
+  margin-bottom: 2rem;
+}
+
+.quickActions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.actionCard {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-decoration: none;
+  color: rgb(60, 54, 51);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(60, 54, 51, 0.1);
+  cursor: pointer;
+}
+
+.actionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(60, 54, 51, 0.2);
+}
+
+.actionIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.actionCard h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: rgb(60, 54, 51);
+}
+
+.actionCard p {
+  font-size: 1rem;
+  color: rgb(116, 114, 100);
+  line-height: 1.5;
+}
+
+/* Tabs de navegación */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid rgb(224, 204, 190);
+  overflow-x: auto;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(116, 114, 100);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.tab:hover {
+  color: rgb(60, 54, 51);
+  background: rgba(224, 204, 190, 0.3);
+}
+
+.tabActive {
+  color: rgb(60, 54, 51);
+  border-bottom-color: rgb(116, 114, 100);
+}
+
+/* Contenido */
+.content {
+  min-height: 400px;
+}
+
+.section {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sectionHeader h2 {
+  font-size: 1.5rem;
+  color: rgb(60, 54, 51);
+  margin: 0;
+}
+
+.btnPrimary {
+  background: rgb(60, 54, 51);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btnPrimary:hover {
+  background: rgb(116, 114, 100);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(60, 54, 51, 0.3);
+}
+
+.btnSecondary {
+  background: white;
+  color: rgb(60, 54, 51);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid rgb(224, 204, 190);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btnSecondary:hover {
+  border-color: rgb(116, 114, 100);
+  background: rgb(238, 237, 235);
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(60, 54, 51, 0.1);
+}
+
+.placeholder {
+  color: rgb(116, 114, 100);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Stats */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.statCard {
+  background: rgb(238, 237, 235);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 2px solid rgb(224, 204, 190);
+  transition: all 0.3s;
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(60, 54, 51, 0.15);
+  border-color: rgb(116, 114, 100);
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgb(60, 54, 51);
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  color: rgb(116, 114, 100);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: rgb(116, 114, 100);
+}
+
+.error {
+  background: #fee;
+  border: 1px solid #fcc;
+  color: #c00;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.tableContainer {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(60, 54, 51, 0.1);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table thead {
+  background: rgb(224, 204, 190);
+}
+
+.table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: rgb(60, 54, 51);
+  border-bottom: 2px solid rgb(116, 114, 100);
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgb(224, 204, 190);
+  color: rgb(60, 54, 51);
+}
+
+.table tbody tr:hover {
+  background: rgb(238, 237, 235);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.badgeAdmin {
+  background: rgb(116, 114, 100);
+  color: white;
+}
+
+.badgeUser {
+  background: rgb(224, 204, 190);
+  color: rgb(60, 54, 51);
+}
+
+.select {
+  padding: 0.5rem;
+  border: 2px solid rgb(224, 204, 190);
+  border-radius: 6px;
+  background: white;
+  color: rgb(60, 54, 51);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.select:hover:not(:disabled) {
+  border-color: rgb(116, 114, 100);
+}
+
+.select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.empty {
+  text-align: center;
+  padding: 3rem;
+  color: rgb(116, 114, 100);
+  font-size: 1.1rem;
+}
+
+/* Tabla de productos/órdenes */
+.tableContainer {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.table thead {
+  background: rgb(238, 237, 235);
+  border-bottom: 2px solid rgb(224, 204, 190);
+}
+
+.table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: rgb(60, 54, 51);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgb(238, 237, 235);
+  color: rgb(60, 54, 51);
+}
+
+.table tbody tr:hover {
+  background: rgb(238, 237, 235);
+}
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btnEdit {
+  background: rgb(116, 114, 100);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btnEdit:hover {
+  background: rgb(60, 54, 51);
+  transform: translateY(-2px);
+}
+
+.btnDelete {
+  background: #dc3545;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btnDelete:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+}
+
+.badge {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badgePendiente {
+  background: #ffc107;
+  color: #000;
+}
+
+.badgeProcesando {
+  background: #17a2b8;
+  color: white;
+}
+
+.badgeEnviado {
+  background: #007bff;
+  color: white;
+}
+
+.badgeCompletado {
+  background: #28a745;
+  color: white;
+}
+
+.badgeCancelado {
+  background: #dc3545;
+  color: white;
+}
+
+.selectEstado {
+  padding: 0.5rem;
+  border: 2px solid rgb(224, 204, 190);
+  border-radius: 6px;
+  background: white;
+  color: rgb(60, 54, 51);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.selectEstado:hover {
+  border-color: rgb(116, 114, 100);
+}
+
+.error {
+  color: #dc3545;
+  padding: 1rem;
+  background: #f8d7da;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .tableContainer {
+    padding: 1rem;
+  }
+
+  .table {
+    font-size: 0.9rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
