@@ -83,12 +83,14 @@ const Card = ({ categoria }: CardProps) => {
         imagen: product.imagen || (product.imagenes && product.imagenes[0]) || '',
         descripcion: product.descripcion || '',
         stock: product.stock || 0,
+        tipo: product.tipo || product.categoria || '',
         categoria: product.categoria || product.tipo || '',
+        tamaño: product.tamaño || '',
         quantity: 1
       }
       
       console.log('🛒 Agregando al carrito:', productToAdd)
-      addToCart(productToAdd)
+      addToCart(productToAdd as any)
       setAddedProductId(product.id)
       setTimeout(() => setAddedProductId(null), 2000)
     }
