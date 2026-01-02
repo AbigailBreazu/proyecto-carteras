@@ -112,7 +112,7 @@ export default function ProductosAdminPage() {
     ? productos 
     : productos.filter(p => {
         // Manejar tanto "tipo" como "categoria"
-        const tipoProducto = p.tipo || p.categoria
+        const tipoProducto = p.tipo || (p as any).categoria
         return tipoProducto === filtroTipo
       })
 
