@@ -261,7 +261,7 @@ export default function ProductosAdminPage() {
             const primeraImagen = Array.isArray(imagenes) && imagenes.length > 0 ? imagenes[0] : null
             
             // Verificar si es nuevo (menos de 7 días)
-            const fechaCreacion = new Date(producto.createdAt || producto.created_at)
+            const fechaCreacion = new Date((producto as any).createdAt || (producto as any).created_at)
             const hoy = new Date()
             const diasDesdeCreacion = Math.floor((hoy.getTime() - fechaCreacion.getTime()) / (1000 * 60 * 60 * 24))
             const esNuevo = diasDesdeCreacion < 7
