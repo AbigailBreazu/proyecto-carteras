@@ -285,7 +285,7 @@ export default function ProductosAdminPage() {
                   ) : (
                     <div className={styles.noImage}>Sin imagen</div>
                   )}
-                  <div className={styles.badge}>{producto.tipo || producto.categoria}</div>
+                  <div className={styles.badge}>{producto.tipo || (producto as any).categoria}</div>
                   {esNuevo && <div className={styles.badgeNew}>NUEVO</div>}
                 </div>
               
