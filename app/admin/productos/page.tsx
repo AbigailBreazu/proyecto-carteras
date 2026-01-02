@@ -128,9 +128,9 @@ export default function ProductosAdminPage() {
     mantel_camping: productos.filter(p => (p.tipo || (p as any).categoria) === 'mantel_camping').length,
     bolso_camping: productos.filter(p => (p.tipo || (p as any).categoria) === 'bolso_camping').length,
     lonchera_termica: productos.filter(p => (p.tipo || (p as any).categoria) === 'lonchera_termica').length,
-    mochilas_pequenas: productos.filter(p => (p.tipo || p.categoria) === 'mochilas_pequenas').length,
-    kit_dormir: productos.filter(p => (p.tipo || p.categoria) === 'kit_dormir').length,
-    otros: productos.filter(p => (p.tipo || p.categoria) === 'otros').length
+    mochilas_pequenas: productos.filter(p => (p.tipo || (p as any).categoria) === 'mochilas_pequenas').length,
+    kit_dormir: productos.filter(p => (p.tipo || (p as any).categoria) === 'kit_dormir').length,
+    otros: productos.filter(p => (p.tipo || (p as any).categoria) === 'otros').length
   }
 
   return (
