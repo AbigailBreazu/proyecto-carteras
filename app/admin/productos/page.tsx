@@ -247,7 +247,7 @@ export default function ProductosAdminPage() {
         <div className={styles.grid}>
           {productosFiltrados.map(producto => {
             // Manejar tanto "imagen" (singular) como "imagenes" (plural)
-            let imagenes = producto.imagenes || (producto.imagen ? [producto.imagen] : [])
+            let imagenes = producto.imagenes || ((producto as any).imagen ? [(producto as any).imagen] : [])
             
             // Parsear imagenes si es un string JSON
             if (typeof imagenes === 'string') {
