@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import styles from './personalizar.module.css';
@@ -46,7 +46,7 @@ type Tela = {
   fechaCreacion: string;
 };
 
-export default function PersonalizarPage() {
+function PersonalizarContent() {
   const { data: session } = useSession();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -929,5 +929,13 @@ export default function PersonalizarPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function PersonalizarPage() {
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <PersonalizarContent />
+    </Suspense>
   );
 }
