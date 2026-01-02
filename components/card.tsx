@@ -48,7 +48,7 @@ const Card = ({ categoria }: CardProps) => {
               ? data.productos 
               : data.productos.productos || []
             console.log('📦 Productos cargados (completos):', productosArray)
-            console.log('📦 Productos cargados (resumen):', productosArray.map(p => ({ 
+            console.log('📦 Productos cargados (resumen):', productosArray.map((p: any) => ({ 
               nombre: p.nombre, 
               tipo: p.tipo,
               categoria: p.categoria,
