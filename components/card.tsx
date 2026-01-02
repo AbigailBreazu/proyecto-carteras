@@ -295,7 +295,7 @@ const Card = ({ categoria }: CardProps) => {
                 // Usar el array de imágenes si existe, sino usar la imagen principal
                 const productImages = product.imagenes && product.imagenes.length > 0 
                   ? product.imagenes 
-                  : [product.imagen];
+                  : [product.imagen].filter((img): img is string => !!img);
 
                 return (
                   <div key={product.id} className={styles.card}>
